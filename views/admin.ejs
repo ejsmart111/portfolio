@@ -1,0 +1,90 @@
+<html>
+
+<head>
+    <title>Egbe Jeremiah</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500&family=Raleway:ital,wght@0,400;0,500;0,600;1,400&family=Roboto&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/assets/simditor/site/assets/styles/simditor.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/solid.min.css"
+        integrity="sha512-SazV6tF6Ko4GxhyIZpKoXiKYndqzh7+cqxl9HDH7DGSpjkCN3QLqTAlhJHJnKxu3/2rfCsltzwFC4CmxZE1hPg=="
+        crossorigin="anonymous" />
+    <link href="/assets/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <%-include('partials/nav')-%>
+    <div class="container"><br><br>
+        <h4 style="color:#0f131f">Get creative... Put in something constructive.</h4><br>
+            <form id="form" method="post" action="/blogs" enctype="multipart/form-data">
+                <input class="form-control mb-3" id="title" placeholder="Title of blog post..." name="title"/>
+                <input type="file" id="file" name="image" class="form-control mb-3"/>
+                <textarea id="editor" placeholder="Start your blog here..." name="body" autofocus></textarea>
+                <button type="submit" class="btn mt-3 submit" style="background: #E2364D;">Publish Post</button>
+            </form>
+    </div>
+
+    <script type="text/javascript" src="/assets/simditor/site/assets/scripts/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/assets/simditor/site/assets/scripts/module.js"></script>
+    <script type="text/javascript" src="/assets/simditor/site/assets/scripts/hotkeys.js"></script>
+    <script type="text/javascript" src="/assets/simditor/site/assets/scripts/uploader.js"></script>
+    <script type="text/javascript" src="/assets/simditor/site/assets/scripts/simditor.js"></script>
+    <script src="https://use.fontawesome.com/ff2ffd9765.js"></script>
+    <script>
+        $(document).ready(() => {
+            var editor = new Simditor({
+                textarea: $('#editor'),
+                placeholder: 'Start your blog here...',
+                params: {},
+                upload: false,
+                tabIndent: true,
+                toolbar: true,
+                toolbarFloat: true,
+                toolbarFloatOffset: 0,
+                toolbarHidden: false,
+                pasteImage: false,
+                cleanPaste: false
+            });
+
+            var fd = new FormData();
+            var files = $('#file')[0].files;
+            fd.append('file', files[0]);
+
+            $('#form').submit(() => {
+                let blog = {
+                    title: $('#title').val(),
+                    image: fd,
+                    body: editor.getValue(),
+                    date: new Date()
+                }
+                $.ajax({
+                    type: 'POST',
+                    url: '/blogs',
+                    data: blog,
+                    success: function (data) {
+                        //do something with the data via front-end framework
+                        // location.reload();
+                        window.location.replace("/blogs")
+                    },
+                    error: function (xhr, status, err) {
+                        console.log(err)
+                    }
+                });
+            })
+        })
+    </script>
+</body>
+
+</html>

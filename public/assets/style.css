@@ -1,0 +1,71 @@
+
+*  {
+    font-family: 'Maven pro', sans-serif;
+}
+.nav-link {
+    color: white !important;
+}
+.navbar {
+    background-color: #1B242F !important;
+}
+#home {
+    background: #fff;
+    height: auto;
+    width: 100%;
+}
+#center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    min-width: 300px;
+
+}
+.intro {
+    color: #0f131f;
+    font-size: 35px;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+}
+.btn {
+    padding: 12px;
+    min-width: 200px;
+    display: block;
+    margin-bottom: 10px;
+    color: white;
+}
+.footer {
+    margin: 0;
+    width: 100%;
+    background: rgb(8, 11, 15);
+    height: 30px;
+    padding-top: 4px;
+    padding-left: 20px;
+    position: relative;
+}
+ul.list-inline {
+    margin: 0;
+}
+.social-icon {
+    color: rgb(221, 219, 219);
+    font-size: 14px;
+}
+.social-icon:hover {
+    color: #E2364D;
+    font-size: 14px;
+}
+.social-icon i {
+    margin: 0px;
+}
+
+@media (max-width: 400px) {
+    .intro {
+        font-size: 20px;
+    }
+    .first {
+        margin-top: 20px;
+    }
+}
