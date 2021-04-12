@@ -1,6 +1,5 @@
 let express = require('express')
 let nodemailer = require('nodemailer')
-let config = require('./config')
 
 let app = express()
 let blogController = require('./controllers/blogControllers')
@@ -12,7 +11,7 @@ const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
     auth: {
         user: 'egbeejay@gmail.com',
-        pass: config.PASS_W,
+        pass: '123Baba..',
     },
     tls: {
         // do not fail on invalid certs
@@ -50,4 +49,4 @@ app.get('/about', (req, res) => {
 })
 
 
-app.listen(3000)
+app.listen(process.env.PORT || 3000)
