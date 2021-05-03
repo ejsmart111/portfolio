@@ -1,5 +1,8 @@
 let express = require('express')
 let nodemailer = require('nodemailer')
+let mongoose = require('mongoose')
+    mongoose.connect('mongodb+srv://egbe:blogMongo@blogs.qnvdg.mongodb.net/blogs?retryWrites=true&w=majority', { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true }).then(() => console.log('MongoDB connected...'))
+        .catch(err => console.log('There was a ' + err));
 
 let app = express()
 let blogController = require('./controllers/blogControllers')
@@ -19,7 +22,7 @@ const transporter = nodemailer.createTransport({
     },
 });
 
-blogController(app)
+blogController(app, mongoose)
 app.post('/sendMail', (req, res) => {
     const mailData = {
         from: 'egbeejay@gmail.com',  // sender address
@@ -46,6 +49,9 @@ app.get('/admin', (req, res) => {
 })
 app.get('/about', (req, res) => {
     res.render('about')
+})
+app.get('/portfolio', (req, res) => {
+    res.render('portfolio')
 })
 
 

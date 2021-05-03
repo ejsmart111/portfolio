@@ -1,0 +1,106 @@
+<html>
+
+<head>
+    <title>Egbe Jeremiah- Porfolio</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500&family=Raleway:ital,wght@0,400;0,500;0,600;1,400&family=Roboto&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/solid.min.css"
+        integrity="sha512-SazV6tF6Ko4GxhyIZpKoXiKYndqzh7+cqxl9HDH7DGSpjkCN3QLqTAlhJHJnKxu3/2rfCsltzwFC4CmxZE1hPg=="
+        crossorigin="anonymous" />
+    <link href="/assets/style.css" rel="stylesheet" type="text/css" />
+    <style>
+        .image {
+            width: 100%;
+            border-radius: 3px 3px 0 0;
+            height: 200px;
+            object-fit: cover;
+            border: 1px solid rgb(230, 230, 230)
+        }
+    
+        .card {
+            border-radius: 10px !important;
+        }
+    
+        a {
+            color: #0f131f
+        }
+    
+        a:hover {
+            color: #f10404;
+            text-decoration: underline;
+        }
+
+        .image {
+            height: 300px;
+            object-fit: cover;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <%-include('partials/nav')-%>
+    <div class="container center"><br><br>
+        <h2 class="text-center">Portfolio</h2>
+        <hr style="border:1px solid #E2364D; width:40px" /><br><br>
+        <div class="row  mt-2">
+            <div class="col-md-4">
+                <img src="/assets/IPLAY.PNG" class="img-fluid image"/>
+            </div>
+            <div class="col-md-8">
+                <h4 class="mt-4"><a target="_blank" href="https://iplayio.web.app">iPLAY.IO</a></h4>
+                <p>iPlay.io is a vue based music player built with Vue and feeds from the <a href="https://developer.jamendo.com/v3.0" style="color: #f10404">Jamendo API</a>. iPlay.io allows users to search for different kinds of music based on its name, artist or genre. Tracks/artistes could also be found based on how popular it is on a particular week or  month. </p>
+                <p>This web application was created with the mobile-first approach which means it was created to be very responsive right from the start. It therefore works well on devices like tablets, iPad laptops and so on.</p>
+                <p>Here is a link to its GitHub repository: <a style="color: #f10404" href="https://github.com/ejsmart111/vue-music">github.com/ejsmart111/vue-music</a></p>
+            </div>
+        </div>
+        <hr>
+        <div class="row  mt-2">
+            <div class="col-md-4">
+                <img src="/assets/Conf.PNG" class="img-fluid image"/>
+            </div>
+            <div class="col-md-8">
+                <h4 class="mt-4"><a target="_blank" href="https://conferencex2x.herokuapp.com/">Conference Pro</a></h4>
+                <p>Conference Pro is a video conferencing application (hence the name) that allows users to create call rooms and chat/view other users far and wide provided they have the link to a particular room. This application was created using Node.js and peerjs (which was built based on WebRTC).</p>
+                <p>Conference Pro is also very responsive and was built to work on all kind of devices including iPads, tablets, smart screen monitors, laptops and so on.</p>
+                <p>Here is a link to its GitHub repository: <a style="color: #f10404" href="https://github.com/ejsmart111/video">github.com/ejsmart111/vue-music</a></p>
+            </div>
+        </div>
+        <hr>
+        <div class="row  mt-3">
+            <div class="col-md-4">
+                <img src="/assets/ImageSearch.PNG" class="img-fluid image"/>
+            </div>
+            <div class="col-md-8">
+                <h4 class="mt-4"><a target="_blank" href="https://imagesearch-34a06.firebaseapp.com
+">Image Search</a></h4>
+                <p>Image search is a veryy simple application also built built with Vue and feeds on the <a href="https://pixabay.com/api/docs/" style="color: #f10404">Pixabay Web API</a>. Image search allows users to search for images of any item of choice and see different results based on the searched items. More to this, images can be viewed in a slide or in a grid format.</p>
+                <p>Just like many modern day applications, Image search is reponsive and can be viewed using different devices for example: iPads, tablets, laptops, smart screens, mobile devices and so on.</p>
+                <p>Here is a link to its GitHub repository: <a style="color: #f10404" href="https://github.com/ejsmart111/imagesearch
+">github.com/ejsmart111/vue-music</a></p>
+            </div>
+        </div>
+    </div>
+    <div class="mt-5">
+        <%-include('partials/footer')-%>
+    </div>
+
+
+    <script type="text/javascript" src="/assets/simditor/site/assets/scripts/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/ff2ffd9765.js"></script>
+</body>
+</html>
+

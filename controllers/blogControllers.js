@@ -1,17 +1,7 @@
-let mongoose = require('mongoose')
-mongoose.connect('mongodb+srv://egbe:blogMongo@blogs.qnvdg.mongodb.net/blogs?retryWrites=true&w=majority', { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true }).then(() => console.log('MongoDB connected...'))
-    .catch(err => console.log('There was a ' + err));
 let bodyParser = require('body-parser')
 let multer = require('multer')
 
-let blogSchema = new mongoose.Schema({
-    title: String,
-    image: String,
-    body: String,
-    date: Date,
-})
 
-let Blog = mongoose.model('Blog', blogSchema)
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -25,7 +15,18 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage });
 
 
-module.exports = (app) => {
+module.exports = (app, mongoose) => {
+
+    let blogSchema = new mongoose.Schema({
+        title: String,
+        image: String,
+        body: String,
+        date: Date,
+    })
+
+    let Blog = mongoose.model('Blog', blogSchema)
+    
+    
     app.use(bodyParser.urlencoded({ extended: false }))
 
     app.use(bodyParser.json())
