@@ -6,6 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
+    "build": "webpack",
+    "heroku-postbuild": "ng build --prod"
   },
   "engines": { 
     "node": "19.2.0",
