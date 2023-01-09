@@ -1,0 +1,26 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "my portfolio site",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "heroku-postbuild": "npm run build"
+  },
+  "author": "Egbe Jeremiah",
+  "license": "ISC",
+  "dependencies": {
+    "body-parse": "^0.1.0",
+    "body-parser": "^1.19.0",
+    "cool-ascii-faces": "^1.3.4",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "modulejs": "^2.9.0",
+    "mongoose": "^5.10.14",
+    "multer": "^1.4.2",
+    "nodemailer": "^6.4.16",
+    "simditor": "^2.3.28",
+    "simple-uploader": "^3.0.0"
+  }
+}
