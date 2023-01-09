@@ -8,6 +8,9 @@
     "start": "node app.js",
     "heroku-postbuild": "npm run build"
   },
+  "engines": { 
+    "node": "4.1.1" 
+  },
   "author": "Egbe Jeremiah",
   "license": "ISC",
   "dependencies": {
